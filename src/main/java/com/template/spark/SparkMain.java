@@ -49,8 +49,8 @@ public class SparkMain {
 
         get("feed/:version/application.wadl", (request, response) -> {
             response.type("application/xml");
-            return new ModelAndView(DocumentationService.processDocumentation(request, response),  String.format("spark/template/freemarker/%s", "template-" + request.params("version") + ".wadl.ftl"));
-        }, new FreeMarkerEngine());
+            return new DocumentationService().readStaticFile(request, response, String.format("spark/template/freemarker/%s", "template-" + request.params("version") + ".wadl.ftl"), "UTF-8");
+        });
 
         Spark.get("/feed/:version", (request, response) -> {
             BaseService.ensureSecureTransport(request,response);
