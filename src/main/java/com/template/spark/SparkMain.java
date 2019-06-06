@@ -4,7 +4,6 @@ import com.template.framework.service.BaseService;
 import com.template.framework.service.DocumentationService;
 import com.template.framework.utilities.Environment;
 import com.template.transformer.JsonTransformer;
-import spark.Spark;
 import java.util.HashMap;
 import java.util.Map;
 

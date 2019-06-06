@@ -8,7 +8,7 @@ http://pcoleman-ws-template.herokuapp.com
 https://pcoleman-ws-template.herokuapp.com/feed/v1
 
 
-#### Web Service Descriptors
+#### Web Service Descriptor Examples
 http://pcoleman-ws-template.herokuapp.com/feed/v1/swagger.json
 
 http://pcoleman-ws-template.herokuapp.com/feed/v1/swagger.yaml
