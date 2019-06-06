@@ -4,9 +4,7 @@ import com.template.framework.service.BaseService;
 import com.template.framework.service.DocumentationService;
 import com.template.framework.utilities.Environment;
 import com.template.transformer.JsonTransformer;
-import spark.ModelAndView;
 import spark.Spark;
-import spark.template.freemarker.FreeMarkerEngine;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,7 +50,7 @@ public class SparkMain {
             return new DocumentationService().readStaticFile(request, response, String.format("spark/template/freemarker/%s", "template-" + request.params("version") + ".wadl.ftl"), "UTF-8");
         });
 
-        Spark.get("/feed/:version", (request, response) -> {
+        get("/feed/:version", (request, response) -> {
             BaseService.ensureSecureTransport(request,response);
             response.type("application/json");
             Map<String,String> result = new HashMap();
