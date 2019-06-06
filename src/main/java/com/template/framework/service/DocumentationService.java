@@ -45,8 +45,8 @@ public class DocumentationService {
                 if(line.contains("@path/application.wadl")){
                     line=line.replace("@path/application.wadl",url+"application.wadl");
                 }
-                if(line.contains("@path/assessment")){
-                    line=line.replace("@path/assessment",url+"assessment");
+                if(line.contains("@path/template")){
+                    line=line.replace("@path/template",url+"template");
                 }
 
                 sb.append( line );

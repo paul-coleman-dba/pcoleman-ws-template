@@ -53,7 +53,7 @@ public class SparkMain {
         }, new FreeMarkerEngine());
 
         Spark.get("/feed/:version", (request, response) -> {
-            //BaseService.ensureSecureTransport(request,response);
+            BaseService.ensureSecureTransport(request,response);
             response.type("application/json");
             Map<String,String> result = new HashMap();
             result.put("msg", "result");
