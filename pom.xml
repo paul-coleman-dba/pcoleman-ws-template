@@ -26,12 +26,12 @@
         <dependency>
             <groupId>com.force.api</groupId>
             <artifactId>force-partner-api</artifactId>
-            <version>46.0.0</version>
+            <version>46.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.force.api</groupId>
             <artifactId>force-wsc</artifactId>
-            <version>46.0.0</version>
+            <version>46.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.sparkjava</groupId>
