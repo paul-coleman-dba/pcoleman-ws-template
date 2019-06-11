@@ -17,7 +17,7 @@ public class Environment
         {
             if (ENVIRONMENT_MAP.isEmpty())
             {
-                Map<String,String> envs = System.getenv();
+                Map<String, String> envs = System.getenv();
                 if (envs.containsKey("DYNO"))
                 {
                     System.out.println(" getEnvironmentMap: we are in heroku environment ");

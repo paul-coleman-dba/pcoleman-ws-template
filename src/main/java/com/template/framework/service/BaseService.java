@@ -13,7 +13,7 @@ public class BaseService
         String protocolHeader = request.headers("X-Forwarded-Proto");
         String forwardHeader = Environment.getEnvironmentMap().get("X-Forwarded-Proto");
         boolean isHTTPs = "https".equals(protocolHeader) || "https".equals(forwardHeader);
-        if ( !isHTTPs )
+        if (!isHTTPs)
         {
             throw new RuntimeException("Insecure transport protocol");
         }
@@ -23,18 +23,18 @@ public class BaseService
     {
         String bearer;
         String token = request.headers("Authorization");
-        if( StringUtils.isEmpty( token ) )
+        if (StringUtils.isEmpty(token))
         {
             response.status(403);
         }
         String[] tokens = token.split(" ");
-        if( tokens.length == 2 && "bearer".equals(tokens[0].toLowerCase() ) )
+        if (tokens.length == 2 && "bearer".equals(tokens[0].toLowerCase()))
         {
             bearer = tokens[1];
         }
         else
         {
-            throw new RuntimeException( BaseResponse.StatusMap.get(BaseResponse.MISSING_TOKEN) );
+            throw new RuntimeException(BaseResponse.StatusMap.get(BaseResponse.MISSING_TOKEN));
         }
 
         return bearer;

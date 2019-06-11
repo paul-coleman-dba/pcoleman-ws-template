@@ -1,6 +1,6 @@
 package com.template.framework.response;
 
-import com.template.utilities.Utility;
+import com.template.framework.utilities.Utility;
 
 import java.util.HashMap;
 

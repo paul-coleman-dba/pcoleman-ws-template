@@ -4,22 +4,25 @@ import com.template.framework.service.BaseService;
 import com.template.framework.service.DocumentationService;
 import com.template.framework.utilities.Environment;
 import com.template.transformer.JsonTransformer;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import static spark.Spark.*;
 
 
-public class SparkMain {
+public class SparkMain
+{
 
     public static final HashMap<String, String> ENV = new HashMap<>();
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws Exception
+    {
 
         ENV.putAll(Environment.getEnvironmentMap());
 
         String port = ENV.get("PORT") != null ? ENV.get("PORT") : "8000";
-        port( Integer.parseInt( port ) );
+        port(Integer.parseInt(port));
 
         get("/", (request, response) -> {
             response.type("text/plain");
@@ -50,9 +53,9 @@ public class SparkMain {
         });
 
         get("/feed/:version", (request, response) -> {
-            BaseService.ensureSecureTransport(request,response);
+            BaseService.ensureSecureTransport(request, response);
             response.type("application/json");
-            Map<String,String> result = new HashMap();
+            Map<String, String> result = new HashMap();
             result.put("msg", "result");
             return result;
         }, new JsonTransformer());

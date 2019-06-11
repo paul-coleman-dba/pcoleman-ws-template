@@ -20,14 +20,17 @@ import java.util.Map;
 public class HTTPService
 {
 
-    public static String getRequest(String url, Map<String, String> headers) throws  Exception {
+    public static String getRequest(String url, Map<String, String> headers) throws Exception
+    {
 
         HttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(url);
 
-        if( headers != null && headers.size() > 0 ) {
-            for (String key : headers.keySet()) {
-                httpGet.setHeader( key, headers.get(key) );
+        if (headers != null && headers.size() > 0)
+        {
+            for (String key : headers.keySet())
+            {
+                httpGet.setHeader(key, headers.get(key));
             }
         }
 
@@ -35,11 +38,15 @@ public class HTTPService
         HttpEntity entity = response.getEntity();
         String responseString = null;
 
-        if (entity != null) {
+        if (entity != null)
+        {
             InputStream inputStream = entity.getContent();
-            try {
+            try
+            {
                 responseString = IOUtils.toString(inputStream, "UTF-8");
-            } finally {
+            }
+            finally
+            {
                 inputStream.close();
             }
         }
@@ -47,38 +54,48 @@ public class HTTPService
     }
 
 
-    public static String postRequest(String url, Map<String, String> headers, Map<String, String> data, String body) throws Exception {
+    public static String postRequest(String url, Map<String, String> headers, Map<String, String> data, String body) throws Exception
+    {
 
         HttpClient httpclient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
 
-        if (data != null && data.size() > 0) {
+        if (data != null && data.size() > 0)
+        {
             List<NameValuePair> params = new ArrayList<NameValuePair>(data.size());
-            for (String key : data.keySet()) {
+            for (String key : data.keySet())
+            {
                 params.add(new BasicNameValuePair(key, data.get(key)));
             }
             httpPost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
         }
 
-        if( headers != null && headers.size() > 0 ) {
-            for (String key : headers.keySet()) {
-                httpPost.setHeader( key, headers.get(key) );
+        if (headers != null && headers.size() > 0)
+        {
+            for (String key : headers.keySet())
+            {
+                httpPost.setHeader(key, headers.get(key));
             }
         }
 
-        if( body != null ) {
-            httpPost.setEntity( new StringEntity(body) );
+        if (body != null)
+        {
+            httpPost.setEntity(new StringEntity(body));
         }
 
         HttpResponse response = httpclient.execute(httpPost);
         HttpEntity entity = response.getEntity();
         String responseString = null;
 
-        if (entity != null) {
+        if (entity != null)
+        {
             InputStream inputStream = entity.getContent();
-            try {
+            try
+            {
                 responseString = IOUtils.toString(inputStream, "UTF-8");
-            } finally {
+            }
+            finally
+            {
                 inputStream.close();
             }
         }
