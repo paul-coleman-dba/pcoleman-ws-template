@@ -24,6 +24,11 @@
 <!--            <version>2.9.9</version>-->
 <!--        </dependency>-->
         <dependency>
+            <groupId>com.frejo</groupId>
+            <artifactId>force-rest-api</artifactId>
+            <version>0.0.40</version>
+        </dependency>
+        <dependency>
             <groupId>com.force.api</groupId>
             <artifactId>force-partner-api</artifactId>
             <version>46.1.0</version>
