@@ -1,1 +1,76 @@
-
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "se-summit-slack-webhook",
+    "description": "A simple webhook descriptor for SE Summit 2021",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "https://hooks.slack.com"
+    }
+  ],
+  "paths": {
+    "/workflows/T01G0063H29/A02CNS7MQAF/370072727689638532/OsS3qCW5TIn6ECnMTy2nvUcQ": {
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/370072727689638532_OsS3qCW5TIn6ECnMTy2nvUcQ_body"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\n  \"DsrLink\": \"https://org62.my.salesforce.com/a253y000001NC1u\",\n  \"CreatedByEmail\": \"paul.coleman@salesforce.com\",\n  \"OpportunityId\": \"0063y000017OxgR\",\n  \"OpportunityName\": \"UNDP - Throughline rewrite (+3000 LPP+ UE)\",\n  \"AccountName\": \"United Nations Development Programme (UNDP)\",\n  \"AssignedToEmail\": \"paul.coleman@salesforce.com\"\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "https://hooks.slack.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://hooks.slack.com"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "370072727689638532_OsS3qCW5TIn6ECnMTy2nvUcQ_body": {
+        "type": "object",
+        "properties": {
+          "DsrLink": {
+            "type": "string"
+          },
+          "OpportunityName": {
+            "type": "string"
+          },
+          "OpportunityId": {
+            "type": "string"
+          },
+          "CreatedByEmail": {
+            "type": "string"
+          },
+          "AccountName": {
+            "type": "string"
+          },
+          "AssignedToEmail": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
